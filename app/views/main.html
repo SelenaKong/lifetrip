@@ -12,6 +12,9 @@
         <script src="@{'/public/javascripts/bootstrap.min.js'}" type="text/javascript" charset="utf-8"></script>
         <script src="@{'/public/javascripts/functions.js'}" type="text/javascript" charset="utf-8"></script>
         #{get 'moreScripts' /}
+        <script type="text/javascript">
+          var ctx = "@{Application.index()}";
+        </script>
     </head>
     <body>
         #{include 'Application/header.html'/}

@@ -16,7 +16,7 @@ public class Initialize extends Job<String> {
         if (User.count() > 0) return;
         Logger.info("Data Initialize");
         // 初始化用户
-        User admin = new User("admin", "admin");
+        User admin = new User("admin@admin.com", "admin");
         admin.save();
         // 用户组
         UserGroup anonymous = new UserGroup();
@@ -30,6 +30,7 @@ public class Initialize extends Job<String> {
         anonymous.resources.add(new Resource("Application.index", "Application.index"));
         anonymous.resources.add(new Resource("Users.register", "Users.register"));
         anonymous.resources.add(new Resource("Users.add", "Users.add"));
+        anonymous.resources.add(new Resource("Users.checkEmail", "Users.checkEmail"));
         anonymous.save();
     }
 }

@@ -18,4 +18,17 @@ public class Users extends Application {
         Logger.info(user.toString());
         Application.index();
     }
+
+    /**
+     * 检查Email是否已经存在
+     * @param email
+     */
+    public static void checkEmail(String email) {
+        long count = User.count("email = ?", email);
+        if (count > 0) {
+            renderJSON("{\"valid\":0}");
+        } else {
+            renderJSON("{\"valid\":1}");
+        }
+    }
 }

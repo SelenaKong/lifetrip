@@ -10,7 +10,7 @@
     <div class="control-group">
 		  <label class="control-label" for="email">个人邮箱</label>
 		  <div class="controls">
-		    <input type="text" id="email" name="user.email"/>
+		    <input type="text" id="email" name="user.email" onblur="checkEmail()"/>
 		    <span class="help-inline">
 		      <span class="muted"  id="email-text">用来登陆或找回密码</span>
 		    </span>
@@ -21,7 +21,7 @@
       <div class="controls">
         <input type="text" id="nickName" name="user.nickName"/>
         <span class="help-inline">
-          <span class="muted" id="nickName-text">显示用的名字</span>
+          <span class="muted" id="nickName-text">显示用的名字,不能少于4个字符</span>
         </span>
       </div>
     </div>
@@ -43,7 +43,7 @@
 		</div>
 		<div class="control-group">
 	    <div class="controls">
-	      <input type="button" class="btn" onclick="createUser()" value="注册用户"/>
+	      <input type="button" id="submitBtn" class="btn" onclick="createUser()" value="注册用户"/>
 	    </div>
 	  </div>
   </form>
